@@ -1,5 +1,7 @@
 # DemoQA — Cypress E2E Automation
 
+[![E2E tests](https://github.com/felipe-haro/demoqa-cypress-automation/actions/workflows/e2e.yml/badge.svg)](https://github.com/felipe-haro/demoqa-cypress-automation/actions/workflows/e2e.yml)
+
 End-to-end test suite for [demoqa.com](https://demoqa.com) built with **Cypress 15 + JavaScript**. It covers
 forms, selections, dialogs and data tables with a Page Object Model, reusable widget components,
 data-driven tests, lightweight accessibility checks and a GitHub Actions pipeline.
@@ -72,8 +74,8 @@ The **main suite has 72 tests** (~2 min). Another 5 tests tagged `@known-defect`
 ## Install
 
 ```bash
-git clone <this-repo-url>
-cd <repo-folder>
+git clone https://github.com/felipe-haro/demoqa-cypress-automation.git
+cd demoqa-cypress-automation
 npm ci
 ```
 
