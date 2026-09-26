@@ -1,0 +1,86 @@
+name: E2E tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # Nightly run catches changes on the (external) application under test.
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      grepTags:
+        description: 'Tag expression to run (e.g. @smoke, @forms, @regression+-@a11y)'
+        required: false
+        default: '-@known-defect'
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+
+  e2e:
+    needs: lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, electron]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Run Cypress suite
+        uses: cypress-io/github-action@v6
+        with:
+          browser: ${{ matrix.browser }}
+          command: >-
+            npx cypress run --browser ${{ matrix.browser }}
+            --expose grepTags=${{ github.event.inputs.grepTags || '-@known-defect' }}
+
+      - name: Upload HTML report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-report-${{ matrix.browser }}
+          path: reports/
+          retention-days: 14
+
+  known-defects:
+    # Documents that reported defects still reproduce. Expected to fail until
+    # the application is fixed, so it never blocks the pipeline.
+    needs: lint
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: cypress-io/github-action@v6
+        with:
+          command: npm run test:known-defects
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-known-defects
+          path: reports/
+          retention-days: 14

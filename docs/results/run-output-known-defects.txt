@@ -1,0 +1,288 @@
+
+> demoqa-cypress-automation@1.0.0 test:known-defects
+> cypress run --expose grepTags=@known-defect,grepFilterSpecs=true
+
+
+Warning: The allowCypressEnv configuration option is enabled. This allows any browser code to read values from Cypress.env(). This is insecure and will be removed in a future major version.
+
+1. Replace Cypress.env() calls with cy.env() (for sensitive values) or Cypress.expose() (for public configuration)
+2. Set allowCypressEnv: false in your Cypress configuration to disable Cypress.env()
+
+Learn more: https://on.cypress.io/cypress-env-migration
+
+@cypress/grep: filtering using tag(s) "@known-defect"
+@cypress/grep: non-matching tests will be omitted from results (not skipped)
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        15.21.1                                                                        │
+  │ Browser:        Electron 138 (headless)                                                        │
+  │ Node Version:   v24.11.0 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          4 found (accessibility/accessibility.cy.js, elements/text-box.cy.js, elements/ │
+  │                 web-tables.cy.js, forms/practice-form.cy.js)                                   │
+  │ Searched:       C:/Users/PC-Casa/Desktop/challenges/take-home-challenge/cypress/e2e/accessibil │
+  │                 ity/accessibility.cy.js, C:/Users/PC-Casa/Desktop/challenges/take-home-challen │
+  │                 ge/cypress/e2e/elements/text-box.cy.js, C:/Users/PC-Casa/Desktop/challenges/ta │
+  │                 ke-home-challenge/cypress/e2e/elements/web-tables.cy.js, C:/Users/PC-Casa/Desk │
+  │                 top/challenges/take-home-challenge/cypress/e2e/forms/practice-form.cy.js       │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  accessibility/accessibility.cy.js                                               (1 of 4)
+
+
+  Accessibility (axe-core)
+    1) DEF-005: Practice Form has no critical violations at all
+
+
+  0 passing (4s)
+  1 failing
+
+  1) Accessibility (axe-core)
+       DEF-005: Practice Form has no critical violations at all:
+     AssertionError: unexpected critical a11y violations on Practice Form (strict): expected [ 'image-alt', 'label' ] to be empty
+      at Object.proxyGetter [as get] (https://demoqa.com/__cypress/runner/cypress_runner.js:81449:22)
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/support/commands.js:83:92)
+      at getRet (https://demoqa.com/__cypress/runner/cypress_runner.js:121394:20)
+
+
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     accessibility/accessibility.cy.js                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\acce     (1280x720)
+     ssibility\accessibility.cy.js\Accessibility (axe-core) -- DEF-005 Practice Form                
+     has no critical violations at all (failed).png                                                 
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\acce     (1280x720)
+     ssibility\accessibility.cy.js\Accessibility (axe-core) -- DEF-005 Practice Form                
+     has no critical violations at all (failed) (attempt 2).png                                     
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  elements/text-box.cy.js                                                         (2 of 4)
+
+
+  Elements - Text Box
+    1) DEF-002: clears the previous output when the email becomes invalid
+
+
+  0 passing (25s)
+  1 failing
+
+  1) Elements - Text Box
+       DEF-002: clears the previous output when the email becomes invalid:
+     AssertionError: Timed out retrying after 8000ms: Expected [ <p#name.mb-1>, 3 more... ] not to exist in the DOM, but it was continuously found. Queried from:
+
+              > cy.get(#output)
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/elements/text-box.cy.js:47:26)
+
+
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_001.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     24 seconds                                                                       │
+  │ Spec Ran:     elements/text-box.cy.js                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
+     ents\text-box.cy.js\Elements - Text Box -- DEF-002 clears the previous output wh               
+     en the email becomes invalid (failed).png                                                      
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
+     ents\text-box.cy.js\Elements - Text Box -- DEF-002 clears the previous output wh               
+     en the email becomes invalid (failed) (attempt 2).png                                          
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  elements/web-tables.cy.js                                                       (3 of 4)
+
+
+  Elements - Web Tables (CRUD)
+    1) DEF-003: pagination does not report "Page 1 of 0" for an empty result
+
+
+  0 passing (20s)
+  1 failing
+
+  1) Elements - Web Tables (CRUD)
+       DEF-003: pagination does not report "Page 1 of 0" for an empty result:
+
+      Timed out retrying after 8000ms
+      + expected - actual
+
+
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/elements/web-tables.cy.js:120:27)
+
+
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_002.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      1                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  2                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     20 seconds                                                                       │
+  │ Spec Ran:     elements/web-tables.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
+     ents\web-tables.cy.js\Elements - Web Tables (CRUD) -- DEF-003 pagination does no               
+     t report Page 1 of 0 for an empty result (failed).png                                          
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
+     ents\web-tables.cy.js\Elements - Web Tables (CRUD) -- DEF-003 pagination does no               
+     t report Page 1 of 0 for an empty result (failed) (attempt 2).png                              
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  forms/practice-form.cy.js                                                       (4 of 4)
+
+
+  Forms - Student Registration (Practice Form)
+    Known defects
+      1) DEF-001: rejects a Date of Birth in the future
+      2) DEF-004: closes the confirmation modal with the "Close" button
+
+
+  0 passing (26s)
+  2 failing
+
+  1) Forms - Student Registration (Practice Form)
+       Known defects
+         DEF-001: rejects a Date of Birth in the future:
+     AssertionError: Timed out retrying after 8000ms: Expected <div.fade.modal.show> not to exist in the DOM, but it was continuously found.
+      at Modal.shouldBeClosed (webpack://demoqa-cypress-automation/./cypress/pages/components/Modal.js:43:36)
+      at PracticeFormPage.shouldNotBeSubmitted (webpack://demoqa-cypress-automation/./cypress/pages/PracticeFormPage.js:168:21)
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/forms/practice-form.cy.js:128:19)
+
+  2) Forms - Student Registration (Practice Form)
+       Known defects
+         DEF-004: closes the confirmation modal with the "Close" button:
+     TypeError: The following error originated from your application code, not from Cypress.
+
+  > Lr.findDOMNode is not a function
+
+When Cypress detects uncaught errors originating from your application it will automatically fail the current test.
+
+This behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.
+
+https://on.cypress.io/uncaught-exception-from-application
+      at onClick (https://demoqa.com/assets/index-D_rDx8ml.js:36:57250)
+      at Ux (https://demoqa.com/assets/index-D_rDx8ml.js:8:127898)
+      at <unknown> (https://demoqa.com/assets/index-D_rDx8ml.js:8:133112)
+      at Q0 (https://demoqa.com/assets/index-D_rDx8ml.js:8:15135)
+      at Tm (https://demoqa.com/assets/index-D_rDx8ml.js:8:129134)
+      at $m (https://demoqa.com/assets/index-D_rDx8ml.js:9:28751)
+      at N_ (https://demoqa.com/assets/index-D_rDx8ml.js:9:28573)
+      at sendEvent (https://demoqa.com/__cypress/runner/cypress_runner.js:151385:32)
+      at sendMouseEvent (https://demoqa.com/__cypress/runner/cypress_runner.js:150736:12)
+      at sendClick (https://demoqa.com/__cypress/runner/cypress_runner.js:150797:12)
+
+
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_003.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      0                                                                                │
+  │ Failing:      2                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  4                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     26 seconds                                                                       │
+  │ Spec Ran:     forms/practice-form.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Screenshots)
+
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\form     (1280x720)
+     s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
+     cts -- DEF-001 rejects a Date of Birth in the future (failed).png                              
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\form     (1280x720)
+     s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
+     cts -- DEF-001 rejects a Date of Birth in the future (failed) (attempt 2).png                  
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\form     (1280x720)
+     s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
+     cts -- DEF-004 closes the confirmation modal with the Close button (failed).png                
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\form     (1280x720)
+     s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
+     cts -- DEF-004 closes the confirmation modal with the Close button (failed) (att               
+     empt 2).png                                                                                    
+
+Start generate report process
+Read and merge jsons from "C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons"
+Enhance report
+Create HTML report
+HTML report successfully created!
+C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\index.html
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✖  accessibility/accessibility.cy.js        00:04        1        -        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  elements/text-box.cy.js                  00:24        1        -        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  elements/web-tables.cy.js                00:20        1        -        1        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✖  forms/practice-form.cy.js                00:26        2        -        2        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✖  4 of 4 failed (100%)                     01:14        5        -        5        -        -  
+

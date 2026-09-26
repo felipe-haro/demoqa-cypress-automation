@@ -1,0 +1,42 @@
+{
+  "name": "demoqa-cypress-automation",
+  "version": "1.0.0",
+  "description": "Cypress + JavaScript end-to-end test suite for demoqa.com (forms, selections, dialogs) with Page Objects, data-driven tests, a11y checks and CI.",
+  "scripts": {
+    "test": "cypress run --expose grepTags=-@known-defect",
+    "test:headed": "cypress run --headed --expose grepTags=-@known-defect",
+    "test:chrome": "cypress run --browser chrome --expose grepTags=-@known-defect",
+    "test:smoke": "cypress run --expose grepTags=@smoke,grepFilterSpecs=true",
+    "test:a11y": "cypress run --expose grepTags=@a11y,grepFilterSpecs=true",
+    "test:known-defects": "cypress run --expose grepTags=@known-defect,grepFilterSpecs=true",
+    "test:all": "cypress run",
+    "cy:open": "cypress open --e2e",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "clean": "node -e \"require('fs').rmSync('reports',{recursive:true,force:true})\"",
+    "pretest": "npm run clean"
+  },
+  "author": "Felipe Haroti",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@cypress/grep": "^7.0.0",
+    "@eslint/js": "^10.0.1",
+    "@faker-js/faker": "^10.6.0",
+    "axe-core": "^4.13.0",
+    "cypress": "^15.21.1",
+    "cypress-axe": "^1.7.0",
+    "cypress-mochawesome-reporter": "^5.0.0",
+    "cypress-real-events": "^1.15.1",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-cypress": "^7.0.2",
+    "globals": "^17.12.0",
+    "prettier": "^3.9.9"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

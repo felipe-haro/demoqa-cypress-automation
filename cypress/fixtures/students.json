@@ -1,0 +1,51 @@
+{
+  "complete": [
+    {
+      "scenario": "all fields, multiple subjects and hobbies, picture upload",
+      "firstName": "Ana",
+      "lastName": "Souza",
+      "email": "ana.souza@qa.example.com",
+      "gender": "Female",
+      "mobile": "1199887766",
+      "dateOfBirth": "1995-03-05",
+      "subjects": ["Maths", "Computer Science"],
+      "hobbies": ["Sports", "Reading"],
+      "picture": "avatar.png",
+      "address": "Av. Paulista, 1000 - Sao Paulo, SP",
+      "state": "NCR",
+      "city": "Delhi"
+    },
+    {
+      "scenario": "accented name with apostrophe and leap-day birth date",
+      "firstName": "João",
+      "lastName": "D'Ávila",
+      "email": "joao.davila@qa.example.com",
+      "gender": "Male",
+      "mobile": "2198765432",
+      "dateOfBirth": "2000-02-29",
+      "subjects": ["English"],
+      "hobbies": ["Music"],
+      "address": "Rua das Flores, 42 - Rio de Janeiro, RJ",
+      "state": "Rajasthan",
+      "city": "Jaipur"
+    }
+  ],
+  "requiredOnly": {
+    "firstName": "Ada",
+    "lastName": "Lovelace",
+    "gender": "Other",
+    "mobile": "1234567890"
+  },
+  "invalidMobiles": [
+    { "value": "123456789", "reason": "9 digits (below minlength)" },
+    { "value": "abcdefghij", "reason": "letters" },
+    { "value": "12345-6789", "reason": "non-digit separator" }
+  ],
+  "invalidEmails": ["ana.souza", "ana@", "@qa.example.com", "ana souza@qa.example.com", "ana@qa"],
+  "citiesByState": {
+    "NCR": ["Delhi", "Gurgaon", "Noida"],
+    "Uttar Pradesh": ["Agra", "Lucknow", "Merrut"],
+    "Haryana": ["Karnal", "Panipat"],
+    "Rajasthan": ["Jaipur", "Jaiselmer"]
+  }
+}

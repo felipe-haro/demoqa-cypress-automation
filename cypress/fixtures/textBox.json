@@ -1,0 +1,9 @@
+{
+  "validUser": {
+    "fullName": "Ana Souza",
+    "email": "ana.souza@qa.example.com",
+    "currentAddress": "Av. Paulista, 1000 - Sao Paulo, SP",
+    "permanentAddress": "Rua das Flores, 42 - Rio de Janeiro, RJ"
+  },
+  "invalidEmails": ["ana.souza", "ana@", "@qa.example.com", "ana@qa"]
+}

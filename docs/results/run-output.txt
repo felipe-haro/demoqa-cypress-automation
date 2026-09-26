@@ -1,0 +1,429 @@
+
+> demoqa-cypress-automation@1.0.0 pretest
+> npm run clean
+
+
+> demoqa-cypress-automation@1.0.0 clean
+> node -e "require('fs').rmSync('reports',{recursive:true,force:true})"
+
+
+> demoqa-cypress-automation@1.0.0 test
+> cypress run --expose grepTags=-@known-defect
+
+
+Warning: The allowCypressEnv configuration option is enabled. This allows any browser code to read values from Cypress.env(). This is insecure and will be removed in a future major version.
+
+1. Replace Cypress.env() calls with cy.env() (for sensitive values) or Cypress.expose() (for public configuration)
+2. Set allowCypressEnv: false in your Cypress configuration to disable Cypress.env()
+
+Learn more: https://on.cypress.io/cypress-env-migration
+
+@cypress/grep: filtering using tag(s) "-@known-defect"
+@cypress/grep: non-matching tests will be omitted from results (not skipped)
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        15.21.1                                                                        │
+  │ Browser:        Electron 138 (headless)                                                        │
+  │ Node Version:   v24.11.0 (C:\Program Files\nodejs\node.exe)                                    │
+  │ Specs:          8 found (accessibility/accessibility.cy.js, widgets/select-menu.cy.js, alerts- │
+  │                 frames-windows/alerts.cy.js, alerts-frames-windows/modal-dialogs.cy.js, elemen │
+  │                 ts/radio-button.cy.js, elements/text-box.cy.js, elements/web-tables.cy.js, for │
+  │                 ms/practice-form.cy.js)                                                        │
+  │ Searched:       cypress/e2e/**/*.cy.js                                                         │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  accessibility/accessibility.cy.js                                               (1 of 8)
+
+
+  Accessibility (axe-core)
+
+[a11y] Practice Form: 2 critical violation(s)
+┌─────────┬─────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule        │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼─────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'image-alt' │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+│ 1       │ 'label'     │ 'critical' │ 4     │ 'known' │ 'Ensure every form element has a label'                                  │
+└─────────┴─────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations on Practice Form
+
+[a11y] Text Box: 2 critical violation(s)
+┌─────────┬─────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule        │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼─────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'image-alt' │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+│ 1       │ 'label'     │ 'critical' │ 1     │ 'known' │ 'Ensure every form element has a label'                                  │
+└─────────┴─────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations on Text Box
+
+[a11y] Web Tables: 3 critical violation(s)
+┌─────────┬───────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule          │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼───────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'button-name' │ 'critical' │ 1     │ 'known' │ 'Ensure buttons have discernible text'                                   │
+│ 1       │ 'image-alt'   │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+│ 2       │ 'select-name' │ 'critical' │ 1     │ 'known' │ 'Ensure select element has an accessible name'                           │
+└─────────┴───────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations on Web Tables
+
+[a11y] Select Menu: 3 critical violation(s)
+┌─────────┬───────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule          │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼───────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'image-alt'   │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+│ 1       │ 'label'       │ 'critical' │ 3     │ 'known' │ 'Ensure every form element has a label'                                  │
+│ 2       │ 'select-name' │ 'critical' │ 2     │ 'known' │ 'Ensure select element has an accessible name'                           │
+└─────────┴───────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations on Select Menu
+
+[a11y] Alerts: 1 critical violation(s)
+┌─────────┬─────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule        │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼─────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'image-alt' │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+└─────────┴─────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations on Alerts
+
+[a11y] Modal Dialogs: 1 critical violation(s)
+┌─────────┬─────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule        │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼─────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'image-alt' │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+└─────────┴─────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations on Modal Dialogs
+
+[a11y] Small modal: 1 critical violation(s)
+┌─────────┬─────────────┬────────────┬───────┬─────────┬──────────────────────────────────────────────────────────────────────────┐
+│ (index) │ rule        │ impact     │ nodes │ status  │ description                                                              │
+├─────────┼─────────────┼────────────┼───────┼─────────┼──────────────────────────────────────────────────────────────────────────┤
+│ 0       │ 'image-alt' │ 'critical' │ 1     │ 'known' │ 'Ensure <img> elements have alternative text or a role of none or prese' │
+└─────────┴─────────────┴────────────┴───────┴─────────┴──────────────────────────────────────────────────────────────────────────┘
+    √ introduces no new critical violations inside an open modal dialog
+
+
+  7 passing (10s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     10 seconds                                                                       │
+  │ Spec Ran:     accessibility/accessibility.cy.js                                                │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  widgets/select-menu.cy.js                                                       (2 of 8)
+
+
+  Widgets - Select Menu
+    √ selects an option inside an option group
+    √ replaces the previous choice in a single select
+    √ selects by visible text in the native select and exposes the value
+    Multiselect
+      √ adds several values and removes one
+      √ removes a selected value from the remaining options
+      √ shows "No options" for an unknown term
+      √ selects multiple values in the native multi-select
+
+
+  7 passing (8s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_001.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     8 seconds                                                                        │
+  │ Spec Ran:     widgets/select-menu.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  alerts-frames-windows/alerts.cy.js                                              (3 of 8)
+
+
+  Alerts - Browser dialogs
+    √ shows a simple alert with the expected message
+    √ opens the delayed alert after exactly 5 seconds (virtual clock, no real wait)
+    √ reports "You selected Ok" when the confirm box is accepted
+    √ reports "You selected Cancel" when the confirm box is dismissed
+    √ echoes the name typed into the prompt
+    √ shows no result when the prompt is cancelled
+
+
+  6 passing (9s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_002.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        6                                                                                │
+  │ Passing:      6                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     alerts-frames-windows/alerts.cy.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  alerts-frames-windows/modal-dialogs.cy.js                                       (4 of 8)
+
+
+  Alerts - Modal dialogs
+    √ opens the small modal with its content and closes it with the Close button
+    √ opens the large modal and closes it with the header "X" icon
+    √ closes the modal with the Escape key
+    √ re-opens a modal after it was closed
+
+
+  4 passing (6s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_003.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     5 seconds                                                                        │
+  │ Spec Ran:     alerts-frames-windows/modal-dialogs.cy.js                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  elements/radio-button.cy.js                                                     (5 of 8)
+
+
+  Elements - Radio Button
+    √ selects "Yes" and reports the choice
+    √ selects "Impressive" and reports the choice
+    √ keeps a single option selected when switching
+    √ does not allow the disabled "No" option to be selected
+
+
+  4 passing (6s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_004.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     6 seconds                                                                        │
+  │ Spec Ran:     elements/radio-button.cy.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  elements/text-box.cy.js                                                         (6 of 8)
+
+
+  Elements - Text Box
+    √ echoes every submitted field in the output panel
+    √ renders only the fields that were filled in
+    √ does not render any output when submitting an empty form
+    √ highlights the invalid email "ana.souza" and does not render output
+    √ highlights the invalid email "ana@" and does not render output
+    √ highlights the invalid email "@qa.example.com" and does not render output
+    √ highlights the invalid email "ana@qa" and does not render output
+
+
+  7 passing (17s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_005.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     16 seconds                                                                       │
+  │ Spec Ran:     elements/text-box.cy.js                                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  elements/web-tables.cy.js                                                       (7 of 8)
+
+
+  Elements - Web Tables (CRUD)
+    √ lists the seeded employees
+    √ adds a new employee through the registration form
+    √ edits an existing employee and keeps the other columns
+    √ pre-fills the registration form with the record being edited
+    √ deletes an employee
+    Search
+      √ filters rows by last name
+      √ filters rows by department (case-insensitive)
+      √ filters rows by salary
+      √ finds a newly added employee
+      √ shows no rows when nothing matches
+    Validation
+      √ keeps the form open and adds nothing when submitted empty
+      √ rejects a non-numeric age
+      √ rejects a non-numeric salary
+      √ rejects a email without TLD
+      √ limits age to two digits
+
+
+  15 passing (26s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_006.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        15                                                                               │
+  │ Passing:      15                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     26 seconds                                                                       │
+  │ Spec Ran:     elements/web-tables.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  forms/practice-form.cy.js                                                       (8 of 8)
+
+
+  Forms - Student Registration (Practice Form)
+    Successful submission
+      √ submits a student with all fields, multiple subjects and hobbies, picture upload (5929ms)
+      √ submits a student with accented name with apostrophe and leap-day birth date
+      √ submits with only the required fields and leaves optional rows empty
+      √ dismisses the confirmation modal and keeps the user on the form
+    Validation
+      √ blocks an empty submission and flags every required field
+      √ rejects a mobile number with 9 digits (below minlength)
+      √ rejects a mobile number with letters
+      √ rejects a mobile number with non-digit separator
+      √ limits the mobile number to 10 characters
+      √ rejects the malformed email "ana.souza"
+      √ rejects the malformed email "ana@"
+      √ rejects the malformed email "@qa.example.com"
+      √ rejects the malformed email "ana souza@qa.example.com"
+      √ rejects the malformed email "ana@qa"
+    Dependent and composite widgets
+      √ keeps City disabled until a State is selected
+      √ offers only the cities of NCR
+      √ offers only the cities of Uttar Pradesh
+      √ offers only the cities of Haryana
+      √ offers only the cities of Rajasthan
+      √ adds and removes subjects from the autocomplete
+      √ does not add a subject that does not exist
+      √ shows the date picked in the calendar in the input
+
+
+  22 passing (39s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_007.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        22                                                                               │
+  │ Passing:      22                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     38 seconds                                                                       │
+  │ Spec Ran:     forms/practice-form.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+Start generate report process
+Read and merge jsons from "C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons"
+Enhance report
+Create HTML report
+HTML report successfully created!
+C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\index.html
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped  
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  accessibility/accessibility.cy.js        00:10        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  widgets/select-menu.cy.js                00:08        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  alerts-frames-windows/alerts.cy.js       00:09        6        6        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  alerts-frames-windows/modal-dialogs      00:05        4        4        -        -        - │
+  │    .cy.js                                                                                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  elements/radio-button.cy.js              00:06        4        4        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  elements/text-box.cy.js                  00:16        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  elements/web-tables.cy.js                00:26       15       15        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  forms/practice-form.cy.js                00:38       22       22        -        -        - │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        02:01       72       72        -        -        -  
+

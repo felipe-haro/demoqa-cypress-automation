@@ -1,0 +1,10 @@
+{
+  "_comment": "Known critical axe-core violations per page (see DEFECTS.md, DEF-005). The a11y spec fails only on violations NOT listed here, so it catches regressions without being permanently red.",
+  "Practice Form": ["image-alt", "label"],
+  "Text Box": ["image-alt", "label"],
+  "Web Tables": ["button-name", "image-alt", "select-name"],
+  "Select Menu": ["image-alt", "label", "select-name"],
+  "Alerts": ["image-alt"],
+  "Modal Dialogs": ["image-alt"],
+  "Small modal": ["image-alt"]
+}
