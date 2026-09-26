@@ -22,8 +22,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
@@ -40,23 +40,22 @@ jobs:
       matrix:
         browser: [chrome, electron]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
 
       - name: Run Cypress suite
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
-          browser: ${{ matrix.browser }}
           command: >-
             npx cypress run --browser ${{ matrix.browser }}
             --expose grepTags=${{ github.event.inputs.grepTags || '-@known-defect' }}
 
       - name: Upload HTML report and screenshots
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cypress-report-${{ matrix.browser }}
           path: reports/
@@ -70,16 +69,16 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
           cache: npm
-      - uses: cypress-io/github-action@v6
+      - uses: cypress-io/github-action@v7
         with:
           command: npm run test:known-defects
       - if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: cypress-known-defects
           path: reports/
