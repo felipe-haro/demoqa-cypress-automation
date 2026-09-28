@@ -6,7 +6,7 @@ End-to-end test suite for [demoqa.com](https://demoqa.com) built with **Cypress 
 forms, selections, dialogs and data tables with a Page Object Model, reusable widget components,
 data-driven tests, lightweight accessibility checks and a GitHub Actions pipeline.
 
-> 📄 **Deliverables:** [Test Report](docs/TEST_REPORT.md) · [Defects](DEFECTS.md) ·
+> 📄 **Deliverables:** [Test Report](docs/TEST_REPORT.md) · [Defects](DEFECTS.md) · [Bug reports](docs/bug-reports/) · [Issues](https://github.com/felipe-haro/demoqa-cypress-automation/issues) ·
 > [Recommendations](docs/RECOMMENDATIONS.md) · [Run output](docs/results/)
 
 ---

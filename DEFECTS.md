@@ -9,17 +9,19 @@ npm run test:known-defects
 ```
 
 Screenshots were captured automatically by Cypress on failure and are stored in [`docs/evidence/`](docs/evidence).
+Each defect also has a full bug report in [`docs/bug-reports/`](docs/bug-reports/) and a
+[GitHub Issue](https://github.com/felipe-haro/demoqa-cypress-automation/issues?q=label%3Abug).
 
-| ID      | Title                                                                             | Severity | Priority | Automated check                                 |
-| ------- | --------------------------------------------------------------------------------- | -------- | -------- | ----------------------------------------------- |
-| DEF-004 | Practice Form: "Close" button of the confirmation modal crashes, modal stays open | High     | High     | `forms/practice-form.cy.js` → `DEF-004`         |
-| DEF-001 | Practice Form accepts a Date of Birth in the future (and defaults to today)       | Medium   | Medium   | `forms/practice-form.cy.js` → `DEF-001`         |
-| DEF-007 | Practice Form keeps the old City after the State changes (invalid pair submitted) | Medium   | Medium   | `forms/practice-form.cy.js` → `DEF-007`         |
-| DEF-002 | Text Box keeps showing stale output after an invalid re-submission                | Medium   | Low      | `elements/text-box.cy.js` → `DEF-002`           |
-| DEF-008 | Web Tables accepts a duplicate email when adding or editing a record              | Medium   | Low      | `elements/web-tables.cy.js` → `DEF-008`         |
-| DEF-005 | Critical accessibility violations (missing labels, alt text, names)               | Medium   | Medium   | `accessibility/accessibility.cy.js` → `DEF-005` |
-| DEF-003 | Web Tables shows "Page 1 of 0" and no empty-state for a search with no results    | Low      | Low      | `elements/web-tables.cy.js` → `DEF-003`         |
-| DEF-006 | Typos in user-facing text ("Permananet", "Voilet")                                | Low      | Low      | Evidence from the DOM (no test, see notes)      |
+| ID                                                                           | Title                                                                             | Severity | Priority | Automated check                                 |
+| ---------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------- | -------- | ----------------------------------------------- |
+| [DEF-004](https://github.com/felipe-haro/demoqa-cypress-automation/issues/4) | Practice Form: "Close" button of the confirmation modal crashes, modal stays open | High     | High     | `forms/practice-form.cy.js` → `DEF-004`         |
+| [DEF-001](https://github.com/felipe-haro/demoqa-cypress-automation/issues/1) | Practice Form accepts a Date of Birth in the future (and defaults to today)       | Medium   | Medium   | `forms/practice-form.cy.js` → `DEF-001`         |
+| [DEF-007](https://github.com/felipe-haro/demoqa-cypress-automation/issues/7) | Practice Form keeps the old City after the State changes (invalid pair submitted) | Medium   | Medium   | `forms/practice-form.cy.js` → `DEF-007`         |
+| [DEF-002](https://github.com/felipe-haro/demoqa-cypress-automation/issues/2) | Text Box keeps showing stale output after an invalid re-submission                | Medium   | Low      | `elements/text-box.cy.js` → `DEF-002`           |
+| [DEF-008](https://github.com/felipe-haro/demoqa-cypress-automation/issues/8) | Web Tables accepts a duplicate email when adding or editing a record              | Medium   | Low      | `elements/web-tables.cy.js` → `DEF-008`         |
+| [DEF-005](https://github.com/felipe-haro/demoqa-cypress-automation/issues/5) | Critical accessibility violations (missing labels, alt text, names)               | Medium   | Medium   | `accessibility/accessibility.cy.js` → `DEF-005` |
+| [DEF-003](https://github.com/felipe-haro/demoqa-cypress-automation/issues/3) | Web Tables shows "Page 1 of 0" and no empty-state for a search with no results    | Low      | Low      | `elements/web-tables.cy.js` → `DEF-003`         |
+| [DEF-006](https://github.com/felipe-haro/demoqa-cypress-automation/issues/6) | Typos in user-facing text ("Permananet", "Voilet")                                | Low      | Low      | Evidence from the DOM (no test, see notes)      |
 
 **Severity** = impact on the user or data if it happens. **Priority** = how soon it should be fixed,
 considering severity, frequency and whether a workaround exists.
