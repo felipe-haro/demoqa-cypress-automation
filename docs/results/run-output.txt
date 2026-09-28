@@ -29,10 +29,10 @@ Learn more: https://on.cypress.io/cypress-env-migration
   │ Cypress:        15.21.1                                                                        │
   │ Browser:        Electron 138 (headless)                                                        │
   │ Node Version:   v24.11.0 (C:\Program Files\nodejs\node.exe)                                    │
-  │ Specs:          8 found (accessibility/accessibility.cy.js, widgets/select-menu.cy.js, alerts- │
-  │                 frames-windows/alerts.cy.js, alerts-frames-windows/modal-dialogs.cy.js, elemen │
-  │                 ts/radio-button.cy.js, elements/text-box.cy.js, elements/web-tables.cy.js, for │
-  │                 ms/practice-form.cy.js)                                                        │
+  │ Specs:          8 found (forms/practice-form.cy.js, accessibility/accessibility.cy.js, widgets │
+  │                 /select-menu.cy.js, elements/radio-button.cy.js, elements/text-box.cy.js, elem │
+  │                 ents/web-tables.cy.js, alerts-frames-windows/alerts.cy.js, alerts-frames-windo │
+  │                 ws/modal-dialogs.cy.js)                                                        │
   │ Searched:       cypress/e2e/**/*.cy.js                                                         │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -40,7 +40,61 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  accessibility/accessibility.cy.js                                               (1 of 8)
+  Running:  forms/practice-form.cy.js                                                       (1 of 8)
+
+
+  Forms - Student Registration (Practice Form)
+    Successful submission
+      √ submits a student with all fields, multiple subjects and hobbies, picture upload (6892ms)
+      √ submits a student with accented name with apostrophe and leap-day birth date
+      √ submits with only the required fields and leaves optional rows empty
+      √ dismisses the confirmation modal and keeps the user on the form
+    Validation
+      √ blocks an empty submission and flags every required field
+      √ rejects a mobile number with 9 digits (below minlength)
+      √ rejects a mobile number with letters
+      √ rejects a mobile number with non-digit separator
+      √ limits the mobile number to 10 characters
+      √ rejects the malformed email "ana.souza"
+      √ rejects the malformed email "ana@"
+      √ rejects the malformed email "@qa.example.com"
+      √ rejects the malformed email "ana souza@qa.example.com"
+      √ rejects the malformed email "ana@qa"
+    Dependent and composite widgets
+      √ keeps City disabled until a State is selected
+      √ offers only the cities of NCR
+      √ offers only the cities of Uttar Pradesh
+      √ offers only the cities of Haryana
+      √ offers only the cities of Rajasthan
+      √ refreshes the City options when the State changes
+      √ adds and removes subjects from the autocomplete
+      √ does not add a subject that does not exist
+      √ shows the date picked in the calendar in the input
+
+
+  23 passing (42s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        23                                                                               │
+  │ Passing:      23                                                                               │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     41 seconds                                                                       │
+  │ Spec Ran:     forms/practice-form.cy.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  accessibility/accessibility.cy.js                                               (2 of 8)
 
 
   Accessibility (axe-core)
@@ -108,9 +162,9 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
     √ introduces no new critical violations inside an open modal dialog
 
 
-  7 passing (10s)
+  7 passing (9s)
 
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome.json
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_001.json
 
 
   (Results)
@@ -123,14 +177,14 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
   │ Skipped:      0                                                                                │
   │ Screenshots:  0                                                                                │
   │ Video:        false                                                                            │
-  │ Duration:     10 seconds                                                                       │
+  │ Duration:     9 seconds                                                                        │
   │ Spec Ran:     accessibility/accessibility.cy.js                                                │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  widgets/select-menu.cy.js                                                       (2 of 8)
+  Running:  widgets/select-menu.cy.js                                                       (3 of 8)
 
 
   Widgets - Select Menu
@@ -144,9 +198,9 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
       √ selects multiple values in the native multi-select
 
 
-  7 passing (8s)
+  7 passing (9s)
 
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_001.json
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_002.json
 
 
   (Results)
@@ -166,73 +220,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  alerts-frames-windows/alerts.cy.js                                              (3 of 8)
-
-
-  Alerts - Browser dialogs
-    √ shows a simple alert with the expected message
-    √ opens the delayed alert after exactly 5 seconds (virtual clock, no real wait)
-    √ reports "You selected Ok" when the confirm box is accepted
-    √ reports "You selected Cancel" when the confirm box is dismissed
-    √ echoes the name typed into the prompt
-    √ shows no result when the prompt is cancelled
-
-
-  6 passing (9s)
-
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_002.json
-
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        6                                                                                │
-  │ Passing:      6                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        false                                                                            │
-  │ Duration:     9 seconds                                                                        │
-  │ Spec Ran:     alerts-frames-windows/alerts.cy.js                                               │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  alerts-frames-windows/modal-dialogs.cy.js                                       (4 of 8)
-
-
-  Alerts - Modal dialogs
-    √ opens the small modal with its content and closes it with the Close button
-    √ opens the large modal and closes it with the header "X" icon
-    √ closes the modal with the Escape key
-    √ re-opens a modal after it was closed
-
-
-  4 passing (6s)
-
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_003.json
-
-
-  (Results)
-
-  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        4                                                                                │
-  │ Passing:      4                                                                                │
-  │ Failing:      0                                                                                │
-  │ Pending:      0                                                                                │
-  │ Skipped:      0                                                                                │
-  │ Screenshots:  0                                                                                │
-  │ Video:        false                                                                            │
-  │ Duration:     5 seconds                                                                        │
-  │ Spec Ran:     alerts-frames-windows/modal-dialogs.cy.js                                        │
-  └────────────────────────────────────────────────────────────────────────────────────────────────┘
-
-
-────────────────────────────────────────────────────────────────────────────────────────────────────
-                                                                                                    
-  Running:  elements/radio-button.cy.js                                                     (5 of 8)
+  Running:  elements/radio-button.cy.js                                                     (4 of 8)
 
 
   Elements - Radio Button
@@ -244,7 +232,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
   4 passing (6s)
 
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_004.json
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_003.json
 
 
   (Results)
@@ -264,7 +252,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  elements/text-box.cy.js                                                         (6 of 8)
+  Running:  elements/text-box.cy.js                                                         (5 of 8)
 
 
   Elements - Text Box
@@ -279,7 +267,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
   7 passing (17s)
 
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_005.json
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_004.json
 
 
   (Results)
@@ -299,7 +287,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  elements/web-tables.cy.js                                                       (7 of 8)
+  Running:  elements/web-tables.cy.js                                                       (6 of 8)
 
 
   Elements - Web Tables (CRUD)
@@ -322,9 +310,9 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
       √ limits age to two digits
 
 
-  15 passing (26s)
+  15 passing (27s)
 
-[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_006.json
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_005.json
 
 
   (Results)
@@ -344,38 +332,53 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
                                                                                                     
-  Running:  forms/practice-form.cy.js                                                       (8 of 8)
+  Running:  alerts-frames-windows/alerts.cy.js                                              (7 of 8)
 
 
-  Forms - Student Registration (Practice Form)
-    Successful submission
-      √ submits a student with all fields, multiple subjects and hobbies, picture upload (5929ms)
-      √ submits a student with accented name with apostrophe and leap-day birth date
-      √ submits with only the required fields and leaves optional rows empty
-      √ dismisses the confirmation modal and keeps the user on the form
-    Validation
-      √ blocks an empty submission and flags every required field
-      √ rejects a mobile number with 9 digits (below minlength)
-      √ rejects a mobile number with letters
-      √ rejects a mobile number with non-digit separator
-      √ limits the mobile number to 10 characters
-      √ rejects the malformed email "ana.souza"
-      √ rejects the malformed email "ana@"
-      √ rejects the malformed email "@qa.example.com"
-      √ rejects the malformed email "ana souza@qa.example.com"
-      √ rejects the malformed email "ana@qa"
-    Dependent and composite widgets
-      √ keeps City disabled until a State is selected
-      √ offers only the cities of NCR
-      √ offers only the cities of Uttar Pradesh
-      √ offers only the cities of Haryana
-      √ offers only the cities of Rajasthan
-      √ adds and removes subjects from the autocomplete
-      √ does not add a subject that does not exist
-      √ shows the date picked in the calendar in the input
+  Alerts - Browser dialogs
+    √ shows a simple alert with the expected message
+    √ opens the delayed alert after exactly 5 seconds (virtual clock, no real wait)
+    √ reports "You selected Ok" when the confirm box is accepted
+    √ reports "You selected Cancel" when the confirm box is dismissed
+    √ echoes the name typed into the prompt
+    √ shows no result when the prompt is cancelled
 
 
-  22 passing (39s)
+  6 passing (9s)
+
+[mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_006.json
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        6                                                                                │
+  │ Passing:      6                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        false                                                                            │
+  │ Duration:     9 seconds                                                                        │
+  │ Spec Ran:     alerts-frames-windows/alerts.cy.js                                               │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+                                                                                                    
+  Running:  alerts-frames-windows/modal-dialogs.cy.js                                       (8 of 8)
+
+
+  Alerts - Modal dialogs
+    √ opens the small modal with its content and closes it with the Close button
+    √ opens the large modal and closes it with the header "X" icon
+    √ closes the small modal when clicking outside it
+    √ closes the large modal when clicking outside it
+    √ closes the modal with the Escape key
+    √ re-opens a modal after it was closed
+
+
+  6 passing (8s)
 
 [mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_007.json
 
@@ -383,15 +386,15 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
   (Results)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        22                                                                               │
-  │ Passing:      22                                                                               │
+  │ Tests:        6                                                                                │
+  │ Passing:      6                                                                                │
   │ Failing:      0                                                                                │
   │ Pending:      0                                                                                │
   │ Skipped:      0                                                                                │
   │ Screenshots:  0                                                                                │
   │ Video:        false                                                                            │
-  │ Duration:     38 seconds                                                                       │
-  │ Spec Ran:     forms/practice-form.cy.js                                                        │
+  │ Duration:     7 seconds                                                                        │
+  │ Spec Ran:     alerts-frames-windows/modal-dialogs.cy.js                                        │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
 Start generate report process
@@ -408,14 +411,11 @@ C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\index.html
 
        Spec                                              Tests  Passing  Failing  Pending  Skipped  
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ ✔  accessibility/accessibility.cy.js        00:10        7        7        -        -        - │
+  │ ✔  forms/practice-form.cy.js                00:41       23       23        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  accessibility/accessibility.cy.js        00:09        7        7        -        -        - │
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
   │ ✔  widgets/select-menu.cy.js                00:08        7        7        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  alerts-frames-windows/alerts.cy.js       00:09        6        6        -        -        - │
-  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  alerts-frames-windows/modal-dialogs      00:05        4        4        -        -        - │
-  │    .cy.js                                                                                      │
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
   │ ✔  elements/radio-button.cy.js              00:06        4        4        -        -        - │
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
@@ -423,7 +423,10 @@ C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\index.html
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
   │ ✔  elements/web-tables.cy.js                00:26       15       15        -        -        - │
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✔  forms/practice-form.cy.js                00:38       22       22        -        -        - │
+  │ ✔  alerts-frames-windows/alerts.cy.js       00:09        6        6        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  alerts-frames-windows/modal-dialogs      00:07        6        6        -        -        - │
+  │    .cy.js                                                                                      │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
-    ✔  All specs passed!                        02:01       72       72        -        -        -  
+    ✔  All specs passed!                        02:05       75       75        -        -        -  
 

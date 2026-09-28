@@ -120,4 +120,13 @@ describe('Elements - Web Tables (CRUD)', { tags: ['@elements'] }, () => {
       webTables.pageInfo().should('not.have.text', '1 of 0');
     },
   );
+
+  it('DEF-008: rejects a new employee whose email already exists', { tags: '@known-defect' }, () => {
+    const [existing] = seededEmployees;
+
+    webTables.addEmployee(buildEmployee({ email: existing.email }));
+
+    webTables.rowsWithEmail(existing.email).should('have.length', 1);
+    webTables.rows().should('have.length', seededEmployees.length);
+  });
 });

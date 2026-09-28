@@ -1,7 +1,7 @@
 # Defect Report — DemoQA
 
 All defects below were **observed on https://demoqa.com during this work** (September 2026, Cypress 15.21 on Electron 138 / Chromium,
-viewport 1366×900). Each one has an automated reproduction tagged `@known-defect`, which is
+viewport 1366×900). Every defect except DEF-006 has an automated reproduction tagged `@known-defect`, which is
 **expected to fail** until the application is fixed:
 
 ```bash
@@ -14,7 +14,9 @@ Screenshots were captured automatically by Cypress on failure and are stored in 
 | ------- | --------------------------------------------------------------------------------- | -------- | -------- | ----------------------------------------------- |
 | DEF-004 | Practice Form: "Close" button of the confirmation modal crashes, modal stays open | High     | High     | `forms/practice-form.cy.js` → `DEF-004`         |
 | DEF-001 | Practice Form accepts a Date of Birth in the future (and defaults to today)       | Medium   | Medium   | `forms/practice-form.cy.js` → `DEF-001`         |
+| DEF-007 | Practice Form keeps the old City after the State changes (invalid pair submitted) | Medium   | Medium   | `forms/practice-form.cy.js` → `DEF-007`         |
 | DEF-002 | Text Box keeps showing stale output after an invalid re-submission                | Medium   | Low      | `elements/text-box.cy.js` → `DEF-002`           |
+| DEF-008 | Web Tables accepts a duplicate email when adding or editing a record              | Medium   | Low      | `elements/web-tables.cy.js` → `DEF-008`         |
 | DEF-005 | Critical accessibility violations (missing labels, alt text, names)               | Medium   | Medium   | `accessibility/accessibility.cy.js` → `DEF-005` |
 | DEF-003 | Web Tables shows "Page 1 of 0" and no empty-state for a search with no results    | Low      | Low      | `elements/web-tables.cy.js` → `DEF-003`         |
 | DEF-006 | Typos in user-facing text ("Permananet", "Voilet")                                | Low      | Low      | Evidence from the DOM (no test, see notes)      |
@@ -103,6 +105,55 @@ Date of Birth.
 `Email:ana.souza@qa.example.com` from the previous submission.
 
 **Evidence:** `docs/evidence/DEF-002-stale-output.png`
+
+---
+
+## DEF-007 — Practice Form keeps the previously selected City after the State changes
+
+- **Page:** `/automation-practice-form`
+- **Severity:** Medium. The form submits a combination that cannot exist (e.g. "Haryana Delhi"), so the
+  registered address is wrong. The user sees nothing wrong in the UI.
+- **Priority:** Medium. It affects any user who corrects their State. The fix is small: clear City when State
+  changes.
+
+**Steps to reproduce**
+
+1. Open `https://demoqa.com/automation-practice-form`.
+2. Select State **NCR**, then City **Delhi**.
+3. Change State to **Haryana**.
+4. Fill in the required fields (First Name, Last Name, Gender, Mobile `1234567890`) and click **Submit**.
+
+**Expected:** after step 3, City is cleared, because Delhi does not belong to Haryana. The user has to pick a
+Haryana city (Karnal or Panipat).
+
+**Actual:** City still shows **Delhi**, although its dropdown now lists only Karnal and Panipat. The confirmation
+modal shows **State and City: "Haryana Delhi"**.
+
+**Evidence:** `docs/evidence/DEF-007-stale-city-after-state-change.png`
+
+---
+
+## DEF-008 — Web Tables accepts a duplicate email when adding or editing a record
+
+- **Page:** `/webtables`
+- **Severity:** Medium. Email is the only field that identifies a person in this table. Duplicates make records
+  ambiguous, and any lookup, edit or delete by email can hit the wrong row.
+- **Priority:** Low. This is a demo table without persistence. In a real CRUD, this would be Medium/High.
+
+**Steps to reproduce**
+
+1. Open `https://demoqa.com/webtables`.
+2. Click **Add** and fill in any valid data, using Email **`cierra@example.com`** (it belongs to an existing record).
+3. Click **Submit**.
+
+The same happens when you **edit** an existing record (e.g. Alden) and change its email to `cierra@example.com`.
+
+**Expected:** the form stays open with a validation message such as "Email already exists", and no record is
+created or changed.
+
+**Actual:** the record is saved, and the table shows **two rows** with `cierra@example.com`.
+
+**Evidence:** `docs/evidence/DEF-008-duplicate-email.png`
 
 ---
 

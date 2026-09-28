@@ -32,6 +32,10 @@ class WebTablesPage extends BasePage {
     return cy.contains(this.selectors.rows, email);
   }
 
+  rowsWithEmail(email) {
+    return this.rows().filter(`:contains("${email}")`);
+  }
+
   field(name) {
     return cy.get(this.selectors.field(name));
   }

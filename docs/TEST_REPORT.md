@@ -1,18 +1,18 @@
 # Test Summary Report — DemoQA E2E
 
-**Run date:** 2026-09-26 · **Env:** https://demoqa.com (public) · Cypress 15.21.1 · Electron 138 headless ·
+**Run date:** 2026-09-28 · **Env:** https://demoqa.com (public) · Cypress 15.21.1 · Electron 138 headless ·
 Node 24 · Windows 11 · **Command:** `npm test`
 
 ## Results
 
-| Suite                           |  Tests | Passed | Failed |    Duration | Notes                                               |
-| ------------------------------- | -----: | -----: | -----: | ----------: | --------------------------------------------------- |
-| Main suite (`npm test`)         | **72** | **72** |      0 |      2m 01s | 0 retries used                                      |
-| Stability runs ×2 (`retries=0`) |  72 ×2 |  72 ×2 |      0 | 2m 01s each | Same result without the retry safety net            |
-| Known defects (`@known-defect`) |      5 |      0 |  **5** |      1m 14s | Expected: each one reproduces a DEF in `DEFECTS.md` |
+| Suite                           |  Tests | Passed | Failed |        Duration | Notes                                               |
+| ------------------------------- | -----: | -----: | -----: | --------------: | --------------------------------------------------- |
+| Main suite (`npm test`)         | **75** | **75** |      0 |          2m 05s | 0 retries used                                      |
+| Stability runs ×2 (`retries=0`) |  75 ×2 |  75 ×2 |      0 | 2m 05s / 2m 26s | Same result without the retry safety net            |
+| Known defects (`@known-defect`) |      7 |      0 |  **7** |          2m 05s | Expected: each one reproduces a DEF in `DEFECTS.md` |
 
-Per area: Practice Form 22 · Web Tables 15 · Text Box 7 · Select Menu 7 · Accessibility 7 · Alerts 6 ·
-Modal Dialogs 4 · Radio Button 4. Artifacts: [`docs/results/`](results/) (HTML reports + terminal output).
+Per area: Practice Form 23 · Web Tables 15 · Text Box 7 · Select Menu 7 · Accessibility 7 · Alerts 6 ·
+Modal Dialogs 6 · Radio Button 4. Artifacts: [`docs/results/`](results/) (HTML reports + terminal output).
 
 ## Approach and key decisions
 
@@ -23,7 +23,7 @@ Modal Dialogs 4 · Radio Button 4. Artifacts: [`docs/results/`](results/) (HTML 
 - **Page Objects plus components.** Selectors exist only in `cypress/pages`. The three widgets that DemoQA
   reuses (react-select, Bootstrap modal, react-datepicker) are classes composed into pages, so the fix for a
   widget quirk (e.g. the menu toggling on click) is made once and applies everywhere.
-- **Data-driven.** 34 of the 72 tests are generated from fixtures or data tables. Faker produces unique Web
+- **Data-driven.** 36 of the 75 tests are generated from fixtures or data tables. Faker produces unique Web
   Tables records.
 - **Meaningful assertions.** Full-row equality for tables, every row of the submission modal, and the
   HTML5 `checkValidity()` state (custom `shouldBeInvalid`) instead of CSS colors.
@@ -44,7 +44,7 @@ No `cy.wait(ms)` in the suite (enforced by ESLint). `retries.runMode: 1` stays o
 
 ## Findings
 
-6 defects reported in [DEFECTS.md](../DEFECTS.md). The most important is **DEF-004 (High)**: the **Close** button of
+8 defects reported in [DEFECTS.md](../DEFECTS.md). The most important is **DEF-004 (High)**: the **Close** button of
 the Practice Form confirmation modal throws `TypeError: findDOMNode is not a function` and does not close the
 modal. Two other apparent failures were investigated and recorded as **not** defects: the email space is stripped
 by the browser, and `minlength` was not enforced only because of the synthetic events described above.

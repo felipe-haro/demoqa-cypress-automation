@@ -25,6 +25,14 @@ describe('Alerts - Modal dialogs', { tags: ['@alerts'] }, () => {
     modalDialogs.modal.closeWithIcon().shouldBeClosed();
   });
 
+  ['small', 'large'].forEach((size) => {
+    it(`closes the ${size} modal when clicking outside it`, { tags: '@regression' }, () => {
+      modalDialogs.open(size);
+
+      modalDialogs.modal.closeWithBackdrop().shouldBeClosed();
+    });
+  });
+
   it('closes the modal with the Escape key', { tags: '@regression' }, () => {
     modalDialogs.open('small');
 

@@ -21,10 +21,10 @@ data-driven tests, lightweight accessibility checks and a GitHub Actions pipelin
 | Elements         | [Web Tables](https://demoqa.com/webtables)                   | Full CRUD, search by column, form validation, input limits                                                                      |
 | Widgets          | [Select Menu](https://demoqa.com/select-menu)                | Grouped/single/multi react-select, native select and multi-select                                                               |
 | Alerts & dialogs | [Alerts](https://demoqa.com/alerts)                          | alert / delayed alert (virtual clock) / confirm accept+dismiss / prompt value+cancel                                            |
-| Alerts & dialogs | [Modal Dialogs](https://demoqa.com/modal-dialogs)            | Open/close via button, "X", Escape, reopen                                                                                      |
+| Alerts & dialogs | [Modal Dialogs](https://demoqa.com/modal-dialogs)            | Open/close via button, "X", backdrop, Escape, reopen                                                                            |
 | Accessibility    | all pages above                                              | axe-core scan for critical issues with a known-violations baseline                                                              |
 
-The **main suite has 72 tests** (~2 min). Another 5 tests tagged `@known-defect` reproduce the bugs listed in
+The **main suite has 75 tests** (~2 min). Another 7 tests tagged `@known-defect` reproduce the bugs listed in
 [DEFECTS.md](DEFECTS.md).
 
 ## Tech stack
@@ -89,7 +89,7 @@ npm ci
 | `npm run test:headed`                   | Main suite with a visible browser                                                        |
 | `npm run test:chrome`                   | Main suite in Chrome (headless)                                                          |
 | `npm run cy:open`                       | Cypress interactive runner (pick specs, time-travel debugging)                           |
-| `npm run test:smoke`                    | Only `@smoke` tests (~1 per feature)                                                     |
+| `npm run test:smoke`                    | Only `@smoke` tests (10 tests, 1–2 per page)                                             |
 | `npm run test:a11y`                     | Only accessibility checks                                                                |
 | `npm run test:known-defects`            | Reproduces the bugs from `DEFECTS.md`. **Expected to fail.**                             |
 | `npm run test:all`                      | Everything, including known defects                                                      |

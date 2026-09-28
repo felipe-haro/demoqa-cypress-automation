@@ -41,7 +41,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
     1) DEF-005: Practice Form has no critical violations at all
 
 
-  0 passing (4s)
+  0 passing (5s)
   1 failing
 
   1) Accessibility (axe-core)
@@ -137,10 +137,11 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
   Elements - Web Tables (CRUD)
     1) DEF-003: pagination does not report "Page 1 of 0" for an empty result
+    2) DEF-008: rejects a new employee whose email already exists
 
 
-  0 passing (20s)
-  1 failing
+  0 passing (50s)
+  2 failing
 
   1) Elements - Web Tables (CRUD)
        DEF-003: pagination does not report "Page 1 of 0" for an empty result:
@@ -151,6 +152,17 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
 
       at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/elements/web-tables.cy.js:120:27)
 
+  2) Elements - Web Tables (CRUD)
+       DEF-008: rejects a new employee whose email already exists:
+
+      AssertionError: Timed out retrying after 8000ms: Too many elements found. Found '2', expected '1'.
+      + expected - actual
+
+      -2
+      +1
+      
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/elements/web-tables.cy.js:129:44)
+
 
 
 [mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_002.json
@@ -159,14 +171,14 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
   (Results)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        1                                                                                │
+  │ Tests:        2                                                                                │
   │ Passing:      0                                                                                │
-  │ Failing:      1                                                                                │
+  │ Failing:      2                                                                                │
   │ Pending:      0                                                                                │
   │ Skipped:      0                                                                                │
-  │ Screenshots:  2                                                                                │
+  │ Screenshots:  4                                                                                │
   │ Video:        false                                                                            │
-  │ Duration:     20 seconds                                                                       │
+  │ Duration:     49 seconds                                                                       │
   │ Spec Ran:     elements/web-tables.cy.js                                                        │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -179,6 +191,12 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
   -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
      ents\web-tables.cy.js\Elements - Web Tables (CRUD) -- DEF-003 pagination does no               
      t report Page 1 of 0 for an empty result (failed) (attempt 2).png                              
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
+     ents\web-tables.cy.js\Elements - Web Tables (CRUD) -- DEF-008 rejects a new empl               
+     oyee whose email already exists (failed).png                                                   
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\elem     (1280x720)
+     ents\web-tables.cy.js\Elements - Web Tables (CRUD) -- DEF-008 rejects a new empl               
+     oyee whose email already exists (failed) (attempt 2).png                                       
 
 
 ────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -190,10 +208,11 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
     Known defects
       1) DEF-001: rejects a Date of Birth in the future
       2) DEF-004: closes the confirmation modal with the "Close" button
+      3) DEF-007: clears the selected City when the State changes
 
 
-  0 passing (26s)
-  2 failing
+  0 passing (46s)
+  3 failing
 
   1) Forms - Student Registration (Practice Form)
        Known defects
@@ -201,7 +220,7 @@ Remove output folder C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\rep
      AssertionError: Timed out retrying after 8000ms: Expected <div.fade.modal.show> not to exist in the DOM, but it was continuously found.
       at Modal.shouldBeClosed (webpack://demoqa-cypress-automation/./cypress/pages/components/Modal.js:43:36)
       at PracticeFormPage.shouldNotBeSubmitted (webpack://demoqa-cypress-automation/./cypress/pages/PracticeFormPage.js:168:21)
-      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/forms/practice-form.cy.js:128:19)
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/forms/practice-form.cy.js:140:19)
 
   2) Forms - Student Registration (Practice Form)
        Known defects
@@ -226,6 +245,14 @@ https://on.cypress.io/uncaught-exception-from-application
       at sendMouseEvent (https://demoqa.com/__cypress/runner/cypress_runner.js:150736:12)
       at sendClick (https://demoqa.com/__cypress/runner/cypress_runner.js:150797:12)
 
+  3) Forms - Student Registration (Practice Form)
+       Known defects
+         DEF-007: clears the selected City when the State changes:
+     AssertionError: Timed out retrying after 8000ms: Expected <div.css-1dimb5e-singleValue> not to exist in the DOM, but it was continuously found. Queried from:
+
+              > cy.get(#city)
+      at Context.eval (webpack://demoqa-cypress-automation/./cypress/e2e/forms/practice-form.cy.js:155:32)
+
 
 
 [mochawesome] Report JSON saved to C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons\mochawesome_003.json
@@ -234,14 +261,14 @@ https://on.cypress.io/uncaught-exception-from-application
   (Results)
 
   ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
-  │ Tests:        2                                                                                │
+  │ Tests:        3                                                                                │
   │ Passing:      0                                                                                │
-  │ Failing:      2                                                                                │
+  │ Failing:      3                                                                                │
   │ Pending:      0                                                                                │
   │ Skipped:      0                                                                                │
-  │ Screenshots:  4                                                                                │
+  │ Screenshots:  6                                                                                │
   │ Video:        false                                                                            │
-  │ Duration:     26 seconds                                                                       │
+  │ Duration:     45 seconds                                                                       │
   │ Spec Ran:     forms/practice-form.cy.js                                                        │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
 
@@ -261,6 +288,13 @@ https://on.cypress.io/uncaught-exception-from-application
      s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
      cts -- DEF-004 closes the confirmation modal with the Close button (failed) (att               
      empt 2).png                                                                                    
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\form     (1280x720)
+     s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
+     cts -- DEF-007 clears the selected City when the State changes (failed).png                    
+  -  C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\screenshots\form     (1280x720)
+     s\practice-form.cy.js\Forms - Student Registration (Practice Form) -- Known defe               
+     cts -- DEF-007 clears the selected City when the State changes (failed) (attempt               
+      2).png                                                                                        
 
 Start generate report process
 Read and merge jsons from "C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\.jsons"
@@ -280,9 +314,9 @@ C:\Users\PC-Casa\Desktop\challenges\take-home-challenge\reports\html\index.html
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
   │ ✖  elements/text-box.cy.js                  00:24        1        -        1        -        - │
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✖  elements/web-tables.cy.js                00:20        1        -        1        -        - │
+  │ ✖  elements/web-tables.cy.js                00:49        2        -        2        -        - │
   ├────────────────────────────────────────────────────────────────────────────────────────────────┤
-  │ ✖  forms/practice-form.cy.js                00:26        2        -        2        -        - │
+  │ ✖  forms/practice-form.cy.js                00:45        3        -        3        -        - │
   └────────────────────────────────────────────────────────────────────────────────────────────────┘
-    ✖  4 of 4 failed (100%)                     01:14        5        -        5        -        -  
+    ✖  4 of 4 failed (100%)                     02:05        7        -        7        -        -  
 

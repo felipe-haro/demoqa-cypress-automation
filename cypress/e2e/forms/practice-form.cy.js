@@ -94,6 +94,18 @@ describe('Forms - Student Registration (Practice Form)', { tags: ['@forms'] }, (
       });
     });
 
+    it('refreshes the City options when the State changes', () => {
+      practiceForm.state.select('NCR');
+      practiceForm.city.select('Delhi');
+
+      practiceForm.state.select('Haryana');
+      practiceForm.city.open();
+
+      practiceForm.city.options().should(($options) => {
+        expect([...$options].map((option) => option.innerText)).to.deep.equal(students.citiesByState.Haryana);
+      });
+    });
+
     it('adds and removes subjects from the autocomplete', () => {
       practiceForm.subjects.selectMany(['Physics', 'Chemistry', 'Biology'], { search: true });
       practiceForm.subjects.shouldHaveValues(['Physics', 'Chemistry', 'Biology']);
@@ -132,6 +144,15 @@ describe('Forms - Student Registration (Practice Form)', { tags: ['@forms'] }, (
       practiceForm.fill(students.requiredOnly).submit();
 
       practiceForm.closeResult();
+    });
+
+    it('DEF-007: clears the selected City when the State changes', () => {
+      practiceForm.state.select('NCR');
+      practiceForm.city.select('Delhi');
+
+      practiceForm.state.select('Haryana');
+
+      practiceForm.city.value().should('not.exist');
     });
   });
 });
